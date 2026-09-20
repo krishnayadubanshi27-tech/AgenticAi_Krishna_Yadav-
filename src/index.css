@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-slate-750: #243044;
+  --color-slate-850: #151e2e;
+}
+
+@layer base {
+  * {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+}
+
+/* Custom scrollbar hiding for Netflix-style carousels while maintaining touch & mouse wheel scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth horizontal scroll */
+.horizontal-scroll-container {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Streaming aesthetic glow & shadows */
+.glow-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glow-card:hover {
+  box-shadow: 0 16px 36px -10px rgba(99, 102, 241, 0.22), 0 0 15px 2px rgba(129, 140, 248, 0.15);
+}
+
+.glow-card-alert:hover {
+  box-shadow: 0 16px 36px -10px rgba(245, 158, 11, 0.25), 0 0 15px 2px rgba(251, 191, 36, 0.15);
+}
